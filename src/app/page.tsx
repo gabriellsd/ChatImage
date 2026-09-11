@@ -240,6 +240,47 @@ export default function HomePage() {
     if (dropped?.type.startsWith("image/")) setFile(dropped);
   }
 
+  function takeImageFromClipboard(
+    items: DataTransferItemList | null | undefined,
+  ) {
+    if (!items) return false;
+    for (const item of Array.from(items)) {
+      if (item.kind === "file" && item.type.startsWith("image/")) {
+        const pasted = item.getAsFile();
+        if (pasted) {
+          const ext = pasted.type.split("/")[1] || "png";
+          setFile(
+            new File([pasted], pasted.name || `colar.${ext}`, {
+              type: pasted.type,
+            }),
+          );
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  useEffect(() => {
+    const onPaste = (e: ClipboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (
+        target &&
+        (target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.isContentEditable)
+      ) {
+        return;
+      }
+      if (takeImageFromClipboard(e.clipboardData?.items)) {
+        e.preventDefault();
+        showToast("Imagem colada.");
+      }
+    };
+    window.addEventListener("paste", onPaste);
+    return () => window.removeEventListener("paste", onPaste);
+  }, []);
+
   function onPreviewClick(e: React.MouseEvent<HTMLDivElement>) {
     if (!markingPeople) return;
     const wrap = e.currentTarget;
@@ -656,10 +697,10 @@ export default function HomePage() {
             ) : (
               <div className="flex h-full flex-col items-center justify-center gap-1.5 px-4 text-center">
                 <p className="font-brand text-xl font-bold sm:text-2xl">
-                  Toque para enviar a foto
+                  Toque ou cole a foto
                 </p>
                 <p className="text-[13px] text-[var(--ink-dim)]">
-                  PNG · JPG · WEBP
+                  PNG · JPG · WEBP · Ctrl+V
                 </p>
               </div>
             )}

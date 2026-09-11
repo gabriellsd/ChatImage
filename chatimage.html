@@ -117,8 +117,8 @@ aside{border:1px solid var(--line);background:var(--panel);border-radius:14px;pa
       <div class="drop" id="drop">
         <input type="file" id="file" accept="image/png,image/jpeg,image/webp" hidden />
         <div class="drop-empty" id="empty">
-          <strong>Toque para enviar a foto</strong>
-          <span>PNG · JPG · WEBP</span>
+          <strong>Toque ou cole a foto</strong>
+          <span>PNG · JPG · WEBP · Ctrl+V</span>
         </div>
         <div class="drop-img-wrap" id="previewWrap" hidden>
           <div class="img-box" id="imgBox">
@@ -452,6 +452,32 @@ catsEl.addEventListener("wheel", function(e){
 
 drop.onclick=function(){ if(!state.file) fileInput.click(); };
 fileInput.onchange=function(){ var f=fileInput.files&&fileInput.files[0]; if(f) setFile(f); };
+
+function takeImageFromClipboard(items){
+  if(!items) return false;
+  for(var i=0;i<items.length;i++){
+    var item=items[i];
+    if(item.kind==="file" && item.type && item.type.indexOf("image/")===0){
+      var pasted=item.getAsFile();
+      if(pasted){
+        var ext=(pasted.type.split("/")[1])||"png";
+        setFile(new File([pasted], pasted.name||("colar."+ext), {type:pasted.type}));
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+window.addEventListener("paste", function(e){
+  var t=e.target;
+  if(t && (t.tagName==="INPUT" || t.tagName==="TEXTAREA" || t.isContentEditable)) return;
+  if(takeImageFromClipboard(e.clipboardData && e.clipboardData.items)){
+    e.preventDefault();
+    toast("Imagem colada.");
+  }
+});
+
 $("changeBtn").onclick=function(){ fileInput.click(); };
 $("removeBtn").onclick=function(){ fileInput.value=""; setFile(null); };
 $("clearSel").onclick=function(){ state.selected.clear(); persist(); renderGrid(); renderCats(); };

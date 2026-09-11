@@ -1,0 +1,1601 @@
+[
+  {
+    "id": "edit",
+    "title": "Edição prática",
+    "effects": [
+      {
+        "id": "removebg",
+        "code": "/removebg",
+        "label": "Remove BG",
+        "description": "Tira o fundo e deixa transparente"
+      },
+      {
+        "id": "cleanup",
+        "code": "/cleanup",
+        "label": "Cleanup",
+        "description": "Remove manchas, lixo e distrações"
+      },
+      {
+        "id": "declutter",
+        "code": "/declutter",
+        "label": "Declutter",
+        "description": "Tira objetos a mais do quadro"
+      },
+      {
+        "id": "relight",
+        "code": "/relight",
+        "label": "Relight",
+        "description": "Refaz a iluminação de forma natural"
+      },
+      {
+        "id": "restore",
+        "code": "/restore",
+        "label": "Restore",
+        "description": "Recupera foto antiga ou danificada"
+      },
+      {
+        "id": "upscale",
+        "code": "/upscale",
+        "label": "Upscale",
+        "description": "Aumenta resolução e nitidez"
+      },
+      {
+        "id": "enhance",
+        "code": "/enhance",
+        "label": "Enhance",
+        "description": "Melhora cor, contraste e detalhe"
+      },
+      {
+        "id": "denoise",
+        "code": "/denoise",
+        "label": "Denoise",
+        "description": "Suaviza granulação e ruído"
+      },
+      {
+        "id": "deblur",
+        "code": "/deblur",
+        "label": "Deblur",
+        "description": "Corrige trepidação e foco ruim"
+      },
+      {
+        "id": "changebg",
+        "code": "/changebg",
+        "label": "Change BG",
+        "description": "Troca o fundo mantendo o assunto"
+      },
+      {
+        "id": "newbg",
+        "code": "/newbg",
+        "label": "New BG",
+        "description": "Cria um fundo novo coerente"
+      },
+      {
+        "id": "swap-sky",
+        "code": "/swap-sky",
+        "label": "Swap sky",
+        "description": "Substitui só o céu da cena"
+      },
+      {
+        "id": "whitebg",
+        "code": "/whitebg",
+        "label": "White BG",
+        "description": "Coloca fundo branco limpo"
+      },
+      {
+        "id": "blackbg",
+        "code": "/blackbg",
+        "label": "Black BG",
+        "description": "Coloca fundo preto de estúdio"
+      },
+      {
+        "id": "isolate-subject",
+        "code": "/isolate-subject",
+        "label": "Isolate",
+        "description": "Destaca só o assunto principal"
+      },
+      {
+        "id": "sameangle",
+        "code": "/sameangle",
+        "label": "Same angle",
+        "description": "Mantém o mesmo ponto de vista"
+      },
+      {
+        "id": "sameidentity",
+        "code": "/sameidentity",
+        "label": "Same identity",
+        "description": "Preserva o sujeito sem alterar"
+      },
+      {
+        "id": "removepeople",
+        "code": "/removepeople",
+        "label": "Remove people",
+        "description": "Apaga pessoas e reconstrói o fundo (sem transparente)"
+      },
+      {
+        "id": "posefix",
+        "code": "/posefix",
+        "label": "Pose fix",
+        "description": "Corrige postura de forma natural"
+      },
+      {
+        "id": "expand",
+        "code": "/expand",
+        "label": "Expand",
+        "description": "Aumenta a imagem nas bordas"
+      }
+    ],
+    "subjects": [
+      "person",
+      "animal",
+      "product",
+      "place",
+      "other"
+    ]
+  },
+  {
+    "id": "person",
+    "title": "Retrato",
+    "effects": [
+      {
+        "id": "identitylock",
+        "code": "/identitylock",
+        "label": "Identity lock",
+        "description": "Mantém o rosto igual ao original"
+      },
+      {
+        "id": "headshot",
+        "code": "/headshot",
+        "label": "Headshot",
+        "description": "Enquadra ombros e rosto para retrato"
+      },
+      {
+        "id": "proshot",
+        "code": "/proshot",
+        "label": "Pro shot",
+        "description": "Acabamento limpo de foto profissional"
+      },
+      {
+        "id": "cinematicphoto",
+        "code": "/cinematicphoto",
+        "label": "Cinematic photo",
+        "description": "Deixa a foto com cara de cinema"
+      },
+      {
+        "id": "backgroundblur",
+        "code": "/backgroundblur",
+        "label": "Background blur",
+        "description": "Desfoca o fundo e destaca a pessoa"
+      },
+      {
+        "id": "extremecloseup",
+        "code": "/extremecloseup",
+        "label": "Extreme close-up",
+        "description": "Aproxima bem o rosto/detalhe"
+      },
+      {
+        "id": "beautysoft",
+        "code": "/beautysoft",
+        "label": "Beauty soft",
+        "description": "Suaviza pele sem perder identidade"
+      },
+      {
+        "id": "skintexture",
+        "code": "/skintexture",
+        "label": "Skin texture",
+        "description": "Mantém textura natural da pele"
+      },
+      {
+        "id": "glam",
+        "code": "/glam",
+        "label": "Glam",
+        "description": "Acabamento glam de beleza"
+      },
+      {
+        "id": "passport",
+        "code": "/passport",
+        "label": "Passport",
+        "description": "Foto tipo documento, fundo neutro"
+      },
+      {
+        "id": "linkedin",
+        "code": "/linkedin",
+        "label": "LinkedIn",
+        "description": "Retrato profissional para perfil"
+      }
+    ],
+    "subjects": [
+      "person",
+      "other"
+    ]
+  },
+  {
+    "id": "animal",
+    "title": "Pet / animal",
+    "effects": [
+      {
+        "id": "petportrait",
+        "code": "/petportrait",
+        "label": "Pet portrait",
+        "description": "Retrato fofo e nítido do pet"
+      },
+      {
+        "id": "wildlife",
+        "code": "/wildlife",
+        "label": "Wildlife",
+        "description": "Visual de foto de natureza"
+      },
+      {
+        "id": "furdetail",
+        "code": "/furdetail",
+        "label": "Fur detail",
+        "description": "Realça pelos, penas ou textura"
+      },
+      {
+        "id": "animalcloseup",
+        "code": "/animalcloseup",
+        "label": "Animal close-up",
+        "description": "Close no rosto do animal"
+      },
+      {
+        "id": "petstudio",
+        "code": "/petstudio",
+        "label": "Pet studio",
+        "description": "Fundo limpo de estúdio para pet"
+      },
+      {
+        "id": "actionpet",
+        "code": "/actionpet",
+        "label": "Action pet",
+        "description": "Congela movimento brincalhão"
+      },
+      {
+        "id": "cuteboost",
+        "code": "/cuteboost",
+        "label": "Cute boost",
+        "description": "Aumenta o charme sem caricatura"
+      },
+      {
+        "id": "backgroundblur-a",
+        "code": "/backgroundblur",
+        "label": "Background blur",
+        "description": "Desfoca o fundo e destaca o animal"
+      },
+      {
+        "id": "proshot-a",
+        "code": "/proshot",
+        "label": "Pro shot",
+        "description": "Acabamento profissional do animal"
+      },
+      {
+        "id": "cinematicphoto-a",
+        "code": "/cinematicphoto",
+        "label": "Cinematic photo",
+        "description": "Animal com cara de cinema"
+      }
+    ],
+    "subjects": [
+      "animal",
+      "other"
+    ]
+  },
+  {
+    "id": "light",
+    "title": "Luz",
+    "effects": [
+      {
+        "id": "goldenhour",
+        "code": "/goldenhour",
+        "label": "Golden hour",
+        "description": "Luz quente de fim de tarde"
+      },
+      {
+        "id": "bluehour",
+        "code": "/bluehour",
+        "label": "Blue hour",
+        "description": "Luz fria de crepúsculo"
+      },
+      {
+        "id": "softlight",
+        "code": "/softlight",
+        "label": "Soft light",
+        "description": "Luz difusa e suave"
+      },
+      {
+        "id": "hardlight",
+        "code": "/hardlight",
+        "label": "Hard light",
+        "description": "Luz forte com sombra marcada"
+      },
+      {
+        "id": "rimlight",
+        "code": "/rimlight",
+        "label": "Rim light",
+        "description": "Contorno de luz atrás do assunto"
+      },
+      {
+        "id": "backlight",
+        "code": "/backlight",
+        "label": "Backlight",
+        "description": "Luz vindo de trás (contraluz)"
+      },
+      {
+        "id": "silhouette",
+        "code": "/silhouette",
+        "label": "Silhouette",
+        "description": "Assunto escuro contra fundo claro"
+      },
+      {
+        "id": "chiaroscuro",
+        "code": "/chiaroscuro",
+        "label": "Chiaroscuro",
+        "description": "Contraste forte entre luz e sombra"
+      },
+      {
+        "id": "spotlight",
+        "code": "/spotlight",
+        "label": "Spotlight",
+        "description": "Foco de luz como holofote"
+      },
+      {
+        "id": "dramaticlighting",
+        "code": "/dramaticlighting",
+        "label": "Dramatic light",
+        "description": "Iluminação intensa e teatral"
+      },
+      {
+        "id": "volumetriclight",
+        "code": "/volumetriclight",
+        "label": "Volumetric",
+        "description": "Feixes de luz visíveis no ar"
+      },
+      {
+        "id": "godrays",
+        "code": "/godrays",
+        "label": "God rays",
+        "description": "Raios de sol atravessando a cena"
+      },
+      {
+        "id": "neon",
+        "code": "/neon",
+        "label": "Neon",
+        "description": "Brilho colorido de luzes neon"
+      },
+      {
+        "id": "neonlights",
+        "code": "/neonlights",
+        "label": "Neon lights",
+        "description": "Ambiente urbano com neon"
+      },
+      {
+        "id": "moonlight",
+        "code": "/moonlight",
+        "label": "Moonlight",
+        "description": "Iluminação azulada de luar"
+      },
+      {
+        "id": "studio",
+        "code": "/studio",
+        "label": "Studio",
+        "description": "Luz controlada de estúdio"
+      },
+      {
+        "id": "practicallight",
+        "code": "/practicallight",
+        "label": "Practical light",
+        "description": "Usa luzes que já estão na cena"
+      }
+    ],
+    "subjects": [
+      "person",
+      "animal",
+      "product",
+      "place",
+      "other"
+    ]
+  },
+  {
+    "id": "cinema",
+    "title": "Cinema",
+    "effects": [
+      {
+        "id": "cinematic",
+        "code": "/cinematic",
+        "label": "Cinematic",
+        "description": "Cor e contraste de filme"
+      },
+      {
+        "id": "filmstill",
+        "code": "/filmstill",
+        "label": "Film still",
+        "description": "Parece frame de longa-metragem"
+      },
+      {
+        "id": "anamorphic",
+        "code": "/anamorphic",
+        "label": "Anamorphic",
+        "description": "Lente widescreen com flares"
+      },
+      {
+        "id": "imax",
+        "code": "/imax",
+        "label": "IMAX",
+        "description": "Sensação de escala grande"
+      },
+      {
+        "id": "noir",
+        "code": "/noir",
+        "label": "Noir",
+        "description": "Preto e branco dramático"
+      },
+      {
+        "id": "neonnoir",
+        "code": "/neonnoir",
+        "label": "Neon noir",
+        "description": "Noir escuro com neon colorido"
+      },
+      {
+        "id": "vintagefilm",
+        "code": "/vintagefilm",
+        "label": "Vintage film",
+        "description": "Filme antigo com cor desbotada"
+      },
+      {
+        "id": "indiefilm",
+        "code": "/indiefilm",
+        "label": "Indie film",
+        "description": "Visual íntimo de cinema independente"
+      },
+      {
+        "id": "70scinema",
+        "code": "/70scinema",
+        "label": "70s cinema",
+        "description": "Paleta quente dos anos 70"
+      },
+      {
+        "id": "80saction",
+        "code": "/80saction",
+        "label": "80s action",
+        "description": "Estética ousada de ação anos 80"
+      },
+      {
+        "id": "filmgrain",
+        "code": "/filmgrain",
+        "label": "Film grain",
+        "description": "Adiciona grão de película"
+      },
+      {
+        "id": "dollyzoom",
+        "code": "/dollyzoom",
+        "label": "Dolly zoom",
+        "description": "Fundo distorce, assunto fixo"
+      },
+      {
+        "id": "motionblur",
+        "code": "/motionblur",
+        "label": "Motion blur",
+        "description": "Dá sensação de movimento na foto"
+      }
+    ],
+    "subjects": [
+      "person",
+      "animal",
+      "product",
+      "place",
+      "other"
+    ]
+  },
+  {
+    "id": "camera",
+    "title": "Câmera e enquadramento",
+    "effects": [
+      {
+        "id": "closeup",
+        "code": "/closeup",
+        "label": "Close-up",
+        "description": "Aproxima o rosto ou o detalhe"
+      },
+      {
+        "id": "mediumshot",
+        "code": "/mediumshot",
+        "label": "Medium shot",
+        "description": "Enquadra da cintura para cima"
+      },
+      {
+        "id": "fullbody",
+        "code": "/fullbody",
+        "label": "Full body",
+        "description": "Mostra a pessoa inteira"
+      },
+      {
+        "id": "wideangle",
+        "code": "/wideangle",
+        "label": "Wide angle",
+        "description": "Amplia o campo de visão"
+      },
+      {
+        "id": "telephoto",
+        "code": "/telephoto",
+        "label": "Telephoto",
+        "description": "Comprime o fundo e aproxima"
+      },
+      {
+        "id": "fisheye",
+        "code": "/fisheye",
+        "label": "Fisheye",
+        "description": "Distorce as bordas do quadro"
+      },
+      {
+        "id": "macro",
+        "code": "/macro",
+        "label": "Macro",
+        "description": "Detalhe bem próximo e nítido"
+      },
+      {
+        "id": "ultramacro",
+        "code": "/ultramacro",
+        "label": "Ultra macro",
+        "description": "Aproximação extrema do detalhe"
+      },
+      {
+        "id": "lowangle",
+        "code": "/lowangle",
+        "label": "Low angle",
+        "description": "Câmera baixa, assunto imponente"
+      },
+      {
+        "id": "highangle",
+        "code": "/highangle",
+        "label": "High angle",
+        "description": "Câmera alta olhando para baixo"
+      },
+      {
+        "id": "eyelevel",
+        "code": "/eyelevel",
+        "label": "Eye level",
+        "description": "Altura natural dos olhos"
+      },
+      {
+        "id": "dutchangle",
+        "code": "/dutchangle",
+        "label": "Dutch angle",
+        "description": "Quadro inclinado e dramático"
+      },
+      {
+        "id": "pov",
+        "code": "/pov",
+        "label": "POV",
+        "description": "Como se a câmera fosse seus olhos"
+      },
+      {
+        "id": "droneview",
+        "code": "/droneview",
+        "label": "Drone view",
+        "description": "Vista aérea elevada"
+      },
+      {
+        "id": "topdown",
+        "code": "/topdown",
+        "label": "Top down",
+        "description": "Olhar reto de cima para baixo"
+      },
+      {
+        "id": "wormseye",
+        "code": "/wormseye",
+        "label": "Worm's eye",
+        "description": "Câmera no chão olhando pra cima"
+      },
+      {
+        "id": "tiltshift",
+        "code": "/tiltshift",
+        "label": "Tilt-shift",
+        "description": "Faz a cena parecer miniatura"
+      },
+      {
+        "id": "bokeh",
+        "code": "/bokeh",
+        "label": "Bokeh",
+        "description": "Fundo cremoso com luzes suaves"
+      },
+      {
+        "id": "shallowdepth",
+        "code": "/shallowdepth",
+        "label": "Shallow depth",
+        "description": "Assunto nítido, fundo desfocado"
+      },
+      {
+        "id": "ruleofthirds",
+        "code": "/ruleofthirds",
+        "label": "Rule of thirds",
+        "description": "Posiciona fora do centro"
+      },
+      {
+        "id": "symmetry",
+        "code": "/symmetry",
+        "label": "Symmetry",
+        "description": "Composição espelhada e equilibrada"
+      },
+      {
+        "id": "negativespace",
+        "code": "/negativespace",
+        "label": "Negative space",
+        "description": "Deixa área vazia ao redor"
+      }
+    ],
+    "subjects": [
+      "person",
+      "animal",
+      "product",
+      "place",
+      "other"
+    ]
+  },
+  {
+    "id": "photo",
+    "title": "Fotografia",
+    "effects": [
+      {
+        "id": "photorealistic",
+        "code": "/photorealistic",
+        "label": "Photorealistic",
+        "description": "Aparência de foto real"
+      },
+      {
+        "id": "prophoto",
+        "code": "/prophoto",
+        "label": "Pro photo",
+        "description": "Acabamento de fotógrafo profissional"
+      },
+      {
+        "id": "35mmfilm",
+        "code": "/35mmfilm",
+        "label": "35mm film",
+        "description": "Textura e cor de filme 35mm"
+      },
+      {
+        "id": "film35mm",
+        "code": "/35mm",
+        "label": "35mm",
+        "description": "Estética clássica de filme 35mm"
+      },
+      {
+        "id": "polaroid",
+        "code": "/polaroid",
+        "label": "Polaroid",
+        "description": "Estética de foto instantânea"
+      },
+      {
+        "id": "disposablecamera",
+        "code": "/disposablecamera",
+        "label": "Disposable cam",
+        "description": "Visual cru de câmera descartável"
+      },
+      {
+        "id": "mediumformat",
+        "code": "/mediumformat",
+        "label": "Medium format",
+        "description": "Qualidade de médio formato"
+      },
+      {
+        "id": "streetphoto",
+        "code": "/streetphoto",
+        "label": "Street photo",
+        "description": "Estilo espontâneo de rua"
+      },
+      {
+        "id": "fashioneditorial",
+        "code": "/fashioneditorial",
+        "label": "Fashion editorial",
+        "description": "Pose e luz de revista de moda"
+      },
+      {
+        "id": "lookbook",
+        "code": "/lookbook",
+        "label": "Lookbook",
+        "description": "Apresentação limpa de look"
+      },
+      {
+        "id": "paparazzi",
+        "code": "/paparazzi",
+        "label": "Paparazzi",
+        "description": "Sensação de foto flagra"
+      },
+      {
+        "id": "longexposure",
+        "code": "/longexposure",
+        "label": "Long exposure",
+        "description": "Movimento vira rastro de luz"
+      },
+      {
+        "id": "freezeaction",
+        "code": "/freezeaction",
+        "label": "Freeze action",
+        "description": "Congela o instante da ação"
+      },
+      {
+        "id": "hdreal",
+        "code": "/hdreal",
+        "label": "HD real",
+        "description": "Mais definição e clareza"
+      },
+      {
+        "id": "8k",
+        "code": "/8k",
+        "label": "8K",
+        "description": "Detalhe extremo na imagem"
+      },
+      {
+        "id": "ultrarealistic",
+        "code": "/ultrarealistic",
+        "label": "Ultra realistic",
+        "description": "Hiper-realismo fotográfico"
+      }
+    ],
+    "subjects": [
+      "person",
+      "animal",
+      "product",
+      "other"
+    ]
+  },
+  {
+    "id": "weather",
+    "title": "Clima e ambiente",
+    "effects": [
+      {
+        "id": "day2night",
+        "code": "/day2night",
+        "label": "Day → night",
+        "description": "Transforma cena diurna em noite"
+      },
+      {
+        "id": "night2day",
+        "code": "/night2day",
+        "label": "Night → day",
+        "description": "Transforma cena noturna em dia"
+      },
+      {
+        "id": "rain",
+        "code": "/rain",
+        "label": "Rain",
+        "description": "Adiciona chuva e superfície molhada"
+      },
+      {
+        "id": "rainynight",
+        "code": "/rainynight",
+        "label": "Rainy night",
+        "description": "Noite chuvosa com reflexos"
+      },
+      {
+        "id": "storm",
+        "code": "/storm",
+        "label": "Storm",
+        "description": "Céu dramático de tempestade"
+      },
+      {
+        "id": "snow",
+        "code": "/snow",
+        "label": "Snow",
+        "description": "Adiciona neve e clima frio"
+      },
+      {
+        "id": "fog",
+        "code": "/fog",
+        "label": "Fog",
+        "description": "Envolve a cena em neblina"
+      },
+      {
+        "id": "mist",
+        "code": "/mist",
+        "label": "Mist",
+        "description": "Névoa leve e atmosférica"
+      },
+      {
+        "id": "sunset",
+        "code": "/sunset",
+        "label": "Sunset",
+        "description": "Cores quentes de pôr do sol"
+      },
+      {
+        "id": "sunrise",
+        "code": "/sunrise",
+        "label": "Sunrise",
+        "description": "Luz suave de amanhecer"
+      },
+      {
+        "id": "nightcity",
+        "code": "/nightcity",
+        "label": "Night city",
+        "description": "Cidade iluminada à noite"
+      },
+      {
+        "id": "underwater",
+        "code": "/underwater",
+        "label": "Underwater",
+        "description": "Coloca a cena debaixo d'água"
+      },
+      {
+        "id": "space",
+        "code": "/space",
+        "label": "Space",
+        "description": "Ambiente espacial / cósmico"
+      },
+      {
+        "id": "infrared",
+        "code": "/infrared",
+        "label": "Infrared",
+        "description": "Visual de infravermelho"
+      },
+      {
+        "id": "thermal",
+        "code": "/thermal",
+        "label": "Thermal",
+        "description": "Mapa de calor térmico"
+      },
+      {
+        "id": "nightvision",
+        "code": "/nightvision",
+        "label": "Night vision",
+        "description": "Verde de visão noturna"
+      },
+      {
+        "id": "darkmoody",
+        "code": "/darkmoody",
+        "label": "Dark moody",
+        "description": "Atmosfera sombria e dramática"
+      }
+    ],
+    "subjects": [
+      "person",
+      "animal",
+      "product",
+      "place",
+      "other"
+    ]
+  },
+  {
+    "id": "style",
+    "title": "Estilos e épocas",
+    "effects": [
+      {
+        "id": "anime",
+        "code": "/anime",
+        "label": "Anime",
+        "description": "Converte para estilo anime"
+      },
+      {
+        "id": "manga",
+        "code": "/manga",
+        "label": "Manga",
+        "description": "Traço e contraste de mangá"
+      },
+      {
+        "id": "comicbook",
+        "code": "/comicbook",
+        "label": "Comic book",
+        "description": "Visual de HQ / quadrinhos"
+      },
+      {
+        "id": "watercolor",
+        "code": "/watercolor",
+        "label": "Watercolor",
+        "description": "Pintura em aquarela"
+      },
+      {
+        "id": "oilpainting",
+        "code": "/oilpainting",
+        "label": "Oil painting",
+        "description": "Pintura a óleo clássica"
+      },
+      {
+        "id": "pencilsketch",
+        "code": "/pencilsketch",
+        "label": "Pencil sketch",
+        "description": "Desenho a lápis"
+      },
+      {
+        "id": "charcoal",
+        "code": "/charcoal",
+        "label": "Charcoal",
+        "description": "Desenho a carvão"
+      },
+      {
+        "id": "pixelart",
+        "code": "/pixelart",
+        "label": "Pixel art",
+        "description": "Estilo pixel de games antigos"
+      },
+      {
+        "id": "lowpoly",
+        "code": "/lowpoly",
+        "label": "Low poly",
+        "description": "Formas geométricas 3D simples"
+      },
+      {
+        "id": "cyberpunk",
+        "code": "/cyberpunk",
+        "label": "Cyberpunk",
+        "description": "Futuro neon e urbano"
+      },
+      {
+        "id": "steampunk",
+        "code": "/steampunk",
+        "label": "Steampunk",
+        "description": "Retrô com metais e vapor"
+      },
+      {
+        "id": "vaporwave",
+        "code": "/vaporwave",
+        "label": "Vaporwave",
+        "description": "Rosa, roxo e estética anos 80/90"
+      },
+      {
+        "id": "synthwave",
+        "code": "/synthwave",
+        "label": "Synthwave",
+        "description": "Neon retrô e pôr do sol synth"
+      },
+      {
+        "id": "y2k",
+        "code": "/y2k",
+        "label": "Y2K",
+        "description": "Estética dos anos 2000"
+      },
+      {
+        "id": "retro90s",
+        "code": "/retro90s",
+        "label": "Retro 90s",
+        "description": "Visual nostálgico dos anos 90"
+      },
+      {
+        "id": "vintage",
+        "code": "/vintage",
+        "label": "Vintage",
+        "description": "Aparência envelhecida clássica"
+      },
+      {
+        "id": "oldmoney",
+        "code": "/oldmoney",
+        "label": "Old money",
+        "description": "Elegância sóbria e atemporal"
+      },
+      {
+        "id": "luxury",
+        "code": "/luxury",
+        "label": "Luxury",
+        "description": "Acabamento premium e sofisticado"
+      },
+      {
+        "id": "minimalist",
+        "code": "/minimalist",
+        "label": "Minimalist",
+        "description": "Composição limpa e simples"
+      },
+      {
+        "id": "glitch",
+        "code": "/glitch",
+        "label": "Glitch",
+        "description": "Falhas digitais e distorção"
+      },
+      {
+        "id": "holographic",
+        "code": "/holographic",
+        "label": "Holographic",
+        "description": "Brilho holográfico iridescente"
+      },
+      {
+        "id": "dreamcore",
+        "code": "/dreamcore",
+        "label": "Dreamcore",
+        "description": "Atmosfera onírica e estranha"
+      },
+      {
+        "id": "scifi",
+        "code": "/scifi",
+        "label": "Sci-fi",
+        "description": "Visual de ficção científica"
+      },
+      {
+        "id": "fantasy",
+        "code": "/fantasy",
+        "label": "Fantasy",
+        "description": "Toque mágico / fantasia"
+      }
+    ],
+    "subjects": [
+      "person",
+      "animal",
+      "product",
+      "place",
+      "other"
+    ]
+  },
+  {
+    "id": "material",
+    "title": "Materiais",
+    "effects": [
+      {
+        "id": "chrome",
+        "code": "/chrome",
+        "label": "Chrome",
+        "description": "Superfície cromada espelhada"
+      },
+      {
+        "id": "gold",
+        "code": "/gold",
+        "label": "Gold",
+        "description": "Reveste com aspecto de ouro"
+      },
+      {
+        "id": "liquid-metal",
+        "code": "/liquid-metal",
+        "label": "Liquid metal",
+        "description": "Metal líquido refletivo"
+      },
+      {
+        "id": "crystal",
+        "code": "/crystal",
+        "label": "Crystal",
+        "description": "Aparência de cristal translúcido"
+      },
+      {
+        "id": "frostedglass",
+        "code": "/frostedglass",
+        "label": "Frosted glass",
+        "description": "Vidro fosco semitransparente"
+      },
+      {
+        "id": "iridescent",
+        "code": "/iridescent",
+        "label": "Iridescent",
+        "description": "Cores que mudam com a luz"
+      },
+      {
+        "id": "carbonfiber",
+        "code": "/carbonfiber",
+        "label": "Carbon fiber",
+        "description": "Textura de fibra de carbono"
+      },
+      {
+        "id": "marble",
+        "code": "/marble",
+        "label": "Marble",
+        "description": "Aparência de mármore"
+      },
+      {
+        "id": "wood",
+        "code": "/wood",
+        "label": "Wood",
+        "description": "Textura e veios de madeira"
+      },
+      {
+        "id": "ceramic",
+        "code": "/ceramic",
+        "label": "Ceramic",
+        "description": "Acabamento de cerâmica"
+      },
+      {
+        "id": "clay",
+        "code": "/clay",
+        "label": "Clay",
+        "description": "Aparência de argila / massinha"
+      },
+      {
+        "id": "rust",
+        "code": "/rust",
+        "label": "Rust",
+        "description": "Oxidação e aspecto enferrujado"
+      }
+    ],
+    "subjects": [
+      "product",
+      "place",
+      "other"
+    ]
+  },
+  {
+    "id": "tech",
+    "title": "Técnico / viral",
+    "effects": [
+      {
+        "id": "explodedview",
+        "code": "/explodedview",
+        "label": "Exploded view",
+        "description": "Separa as peças no ar"
+      },
+      {
+        "id": "xray",
+        "code": "/xray",
+        "label": "X-ray",
+        "description": "Mostra o interior por transparência"
+      },
+      {
+        "id": "cutaway",
+        "code": "/cutaway",
+        "label": "Cutaway",
+        "description": "Corta parte externa para revelar dentro"
+      },
+      {
+        "id": "crosssection",
+        "code": "/crosssection",
+        "label": "Cross section",
+        "description": "Corte transversal da estrutura"
+      },
+      {
+        "id": "blueprint",
+        "code": "/blueprint",
+        "label": "Blueprint",
+        "description": "Vira planta técnica azul"
+      },
+      {
+        "id": "wireframe",
+        "code": "/wireframe",
+        "label": "Wireframe",
+        "description": "Mostra a malha 3D"
+      },
+      {
+        "id": "isometric",
+        "code": "/isometric",
+        "label": "Isometric",
+        "description": "Vista isométrica de diagrama"
+      },
+      {
+        "id": "orthographic",
+        "code": "/orthographic",
+        "label": "Orthographic",
+        "description": "Vistas técnicas frente/lado/topo"
+      },
+      {
+        "id": "schematic",
+        "code": "/schematic",
+        "label": "Schematic",
+        "description": "Diagrama de funcionamento"
+      },
+      {
+        "id": "anatomy",
+        "code": "/anatomy",
+        "label": "Anatomy",
+        "description": "Decompõe em partes/sistemas"
+      },
+      {
+        "id": "layers",
+        "code": "/layers",
+        "label": "Layers",
+        "description": "Separa em camadas visíveis"
+      },
+      {
+        "id": "infographic",
+        "code": "/infographic",
+        "label": "Infographic",
+        "description": "Explica a imagem com visual de info"
+      },
+      {
+        "id": "stickynotes",
+        "code": "/stickynotes",
+        "label": "Sticky notes",
+        "description": "Adiciona post-its explicativos"
+      },
+      {
+        "id": "annotated",
+        "code": "/annotated",
+        "label": "Annotated",
+        "description": "Marca e nomeia partes da foto"
+      }
+    ],
+    "subjects": [
+      "product",
+      "other"
+    ]
+  },
+  {
+    "id": "product-3d",
+    "title": "2D → 3D",
+    "effects": [
+      {
+        "id": "flat2d-to-3d",
+        "code": "/2dto3d",
+        "label": "2D → 3D",
+        "description": "Transforma imagem plana em objeto 3D"
+      },
+      {
+        "id": "photo-to-3d",
+        "code": "/phototo3d",
+        "label": "Photo → 3D",
+        "description": "Converte a foto do produto em modelo 3D"
+      },
+      {
+        "id": "3drender",
+        "code": "/3drender",
+        "label": "3D render",
+        "description": "Render CGI limpo e profissional"
+      },
+      {
+        "id": "photo-to-render",
+        "code": "/photo-to-render",
+        "label": "Photo → render",
+        "description": "Foto vira render de produto"
+      },
+      {
+        "id": "render-to-photo",
+        "code": "/render-to-photo",
+        "label": "Render → photo",
+        "description": "Render com aparência de foto real"
+      },
+      {
+        "id": "clayrender",
+        "code": "/clayrender",
+        "label": "Clay render",
+        "description": "Versão 3D em massinha cinza"
+      },
+      {
+        "id": "studio3d",
+        "code": "/studio3d",
+        "label": "Studio 3D",
+        "description": "Produto 3D em estúdio com luz soft"
+      },
+      {
+        "id": "turnaround",
+        "code": "/turnaround",
+        "label": "Turnaround",
+        "description": "Mostra o produto em ângulos 3D"
+      },
+      {
+        "id": "orbitview",
+        "code": "/orbitview",
+        "label": "Orbit view",
+        "description": "Vista orbitando ao redor do produto"
+      },
+      {
+        "id": "depth3d",
+        "code": "/depth3d",
+        "label": "Depth 3D",
+        "description": "Dá volume e profundidade à imagem 2D"
+      },
+      {
+        "id": "extrude",
+        "code": "/extrude",
+        "label": "Extrude",
+        "description": "Extruda o desenho 2D em volume"
+      },
+      {
+        "id": "softbox3d",
+        "code": "/softbox3d",
+        "label": "Softbox 3D",
+        "description": "Iluminação softbox em cena 3D"
+      },
+      {
+        "id": "pbrlook",
+        "code": "/pbrlook",
+        "label": "PBR look",
+        "description": "Materiais realistas tipo PBR/CGI"
+      },
+      {
+        "id": "glassproduct3d",
+        "code": "/glassproduct3d",
+        "label": "Glass 3D",
+        "description": "Produto translúcido em render 3D"
+      },
+      {
+        "id": "shadowcatch",
+        "code": "/shadowcatch",
+        "label": "Shadow catch",
+        "description": "Sombra realista no chão do estúdio"
+      }
+    ],
+    "subjects": [
+      "product",
+      "other"
+    ]
+  },
+  {
+    "id": "product",
+    "title": "Produto e ads",
+    "effects": [
+      {
+        "id": "productshot",
+        "code": "/productshot",
+        "label": "Product shot",
+        "description": "Foto comercial do produto"
+      },
+      {
+        "id": "producthero",
+        "code": "/producthero",
+        "label": "Product hero",
+        "description": "Produto em destaque hero"
+      },
+      {
+        "id": "packshot",
+        "code": "/packshot",
+        "label": "Packshot",
+        "description": "Fundo limpo estilo catálogo"
+      },
+      {
+        "id": "beautyshot",
+        "code": "/beautyshot",
+        "label": "Beauty shot",
+        "description": "Destaca acabamento e superfície"
+      },
+      {
+        "id": "floatingproduct",
+        "code": "/floatingproduct",
+        "label": "Floating",
+        "description": "Produto flutuando em fundo limpo"
+      },
+      {
+        "id": "macroproduct",
+        "code": "/macroproduct",
+        "label": "Macro product",
+        "description": "Detalhe próximo do material"
+      },
+      {
+        "id": "lifestyle",
+        "code": "/lifestyle",
+        "label": "Lifestyle",
+        "description": "Produto em cena do dia a dia"
+      },
+      {
+        "id": "unboxing",
+        "code": "/unboxing",
+        "label": "Unboxing",
+        "description": "Cena de abertura da embalagem"
+      },
+      {
+        "id": "flatlay",
+        "code": "/flatlay",
+        "label": "Flat lay",
+        "description": "Composição vista de cima"
+      },
+      {
+        "id": "kitshot",
+        "code": "/kitshot",
+        "label": "Kit shot",
+        "description": "Produto + acessórios juntos"
+      },
+      {
+        "id": "scalehand",
+        "code": "/scalehand",
+        "label": "Hand scale",
+        "description": "Mostra escala na mão (sem trocar o produto)"
+      },
+      {
+        "id": "sticker",
+        "code": "/sticker",
+        "label": "Sticker",
+        "description": "Vira figurinha com recorte limpo"
+      },
+      {
+        "id": "mockup",
+        "code": "/mockup",
+        "label": "Mockup",
+        "description": "Apresenta como mockup de marca"
+      }
+    ],
+    "subjects": [
+      "product",
+      "other"
+    ]
+  },
+  {
+    "id": "product-ads",
+    "title": "Publicidade / banners",
+    "effects": [
+      {
+        "id": "adbanner",
+        "code": "/adbanner",
+        "label": "Ad banner",
+        "description": "Monta banner publicitário do produto"
+      },
+      {
+        "id": "webbanner",
+        "code": "/webbanner",
+        "label": "Web banner",
+        "description": "Banner horizontal para site"
+      },
+      {
+        "id": "storyad",
+        "code": "/storyad",
+        "label": "Story ad",
+        "description": "Formato vertical para stories/reels"
+      },
+      {
+        "id": "feedad",
+        "code": "/feedad",
+        "label": "Feed ad",
+        "description": "Anúncio quadrado para feed"
+      },
+      {
+        "id": "metaads",
+        "code": "/metaads",
+        "label": "Meta ads",
+        "description": "Composição forte para ads sociais"
+      },
+      {
+        "id": "googleads",
+        "code": "/googleads",
+        "label": "Google ads",
+        "description": "Visual limpo para anúncio display"
+      },
+      {
+        "id": "billboard",
+        "code": "/billboard",
+        "label": "Billboard",
+        "description": "Impacto de outdoor/anúncio grande"
+      },
+      {
+        "id": "poster",
+        "code": "/poster",
+        "label": "Poster",
+        "description": "Layout de pôster gráfico"
+      },
+      {
+        "id": "magazinecover",
+        "code": "/magazinecover",
+        "label": "Magazine cover",
+        "description": "Composição de capa de revista"
+      },
+      {
+        "id": "albumcover",
+        "code": "/albumcover",
+        "label": "Album cover",
+        "description": "Visual de capa de álbum"
+      },
+      {
+        "id": "luxuryad",
+        "code": "/luxuryad",
+        "label": "Luxury ad",
+        "description": "Visual de anúncio de luxo"
+      },
+      {
+        "id": "editorial",
+        "code": "/editorial",
+        "label": "Editorial",
+        "description": "Estilo editorial de revista"
+      },
+      {
+        "id": "editorialad",
+        "code": "/editorialad",
+        "label": "Editorial ad",
+        "description": "Anúncio com cara de editorial"
+      },
+      {
+        "id": "campaignkey",
+        "code": "/campaignkey",
+        "label": "Campaign key",
+        "description": "Imagem-chave de campanha"
+      },
+      {
+        "id": "launchad",
+        "code": "/launchad",
+        "label": "Launch ad",
+        "description": "Peça de lançamento do produto"
+      },
+      {
+        "id": "salebanner",
+        "code": "/salebanner",
+        "label": "Sale banner",
+        "description": "Banner de oferta (sem inventar preço)"
+      },
+      {
+        "id": "heroheader",
+        "code": "/heroheader",
+        "label": "Hero header",
+        "description": "Faixa hero para landing page"
+      },
+      {
+        "id": "emailheader",
+        "code": "/emailheader",
+        "label": "Email header",
+        "description": "Cabeçalho visual para e-mail marketing"
+      },
+      {
+        "id": "packagingad",
+        "code": "/packagingad",
+        "label": "Packaging ad",
+        "description": "Destaque da embalagem na peça"
+      },
+      {
+        "id": "beforeafter",
+        "code": "/beforeafter",
+        "label": "Before / after",
+        "description": "Split mostrando antes e depois"
+      },
+      {
+        "id": "ugcstyle",
+        "code": "/ugcstyle",
+        "label": "UGC style",
+        "description": "Visual de conteúdo feito por usuário"
+      },
+      {
+        "id": "influencerad",
+        "code": "/influencerad",
+        "label": "Influencer ad",
+        "description": "Estética de anúncio com creator"
+      },
+      {
+        "id": "minimalad",
+        "code": "/minimalad",
+        "label": "Minimal ad",
+        "description": "Anúncio limpo com espaço negativo"
+      },
+      {
+        "id": "boldtypo",
+        "code": "/boldtypo",
+        "label": "Bold type",
+        "description": "Espaço forte para tipografia (sem escrever texto)"
+      }
+    ],
+    "subjects": [
+      "product",
+      "other"
+    ]
+  },
+  {
+    "id": "space-edit",
+    "title": "Ambiente / reforma",
+    "effects": [
+      {
+        "id": "renovate",
+        "code": "/renovate",
+        "label": "Renovate",
+        "description": "Reforma o ambiente da foto"
+      },
+      {
+        "id": "interiormakeover",
+        "code": "/interiormakeover",
+        "label": "Interior makeover",
+        "description": "Moderniza o interior"
+      },
+      {
+        "id": "roomstage",
+        "code": "/roomstage",
+        "label": "Room stage",
+        "description": "Mobilia e decora o cômodo"
+      },
+      {
+        "id": "emptyroom",
+        "code": "/emptyroom",
+        "label": "Empty room",
+        "description": "Remove móveis e esvazia o espaço"
+      },
+      {
+        "id": "landscape-design",
+        "code": "/landscape-design",
+        "label": "Landscape",
+        "description": "Redesenha o paisagismo externo"
+      },
+      {
+        "id": "facelift",
+        "code": "/facelift",
+        "label": "Facelift",
+        "description": "Atualiza o visual geral do local"
+      },
+      {
+        "id": "perspective-correct",
+        "code": "/perspective-correct",
+        "label": "Perspective fix",
+        "description": "Corrige linhas e perspectiva"
+      },
+      {
+        "id": "homestaging",
+        "code": "/homestaging",
+        "label": "Home staging",
+        "description": "Prepara o espaço para venda"
+      },
+      {
+        "id": "twilightexterior",
+        "code": "/twilightexterior",
+        "label": "Twilight exterior",
+        "description": "Fachada no crepúsculo"
+      },
+      {
+        "id": "virtuallystaged",
+        "code": "/virtuallystaged",
+        "label": "Virtually staged",
+        "description": "Mobília virtual realista"
+      }
+    ],
+    "subjects": [
+      "place",
+      "other"
+    ]
+  }
+]

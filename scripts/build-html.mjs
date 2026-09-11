@@ -272,7 +272,8 @@ function buildPrompt(){
   var removing=codes.indexOf("/removepeople")!==-1||codes.indexOf("/removepeoplebg")!==-1;
   var selective=removing && state.removeMode==="marked" && state.markers.length>0;
   if(selective) codes=codes.map(function(c){
-    return (c==="/removepeople" || c==="/removepeoplebg")) ? "/eraseperson" : c;
+    if(c==="/removepeople" || c==="/removepeoplebg") return "/eraseperson";
+    return c;
   });
 
   var lines=[];

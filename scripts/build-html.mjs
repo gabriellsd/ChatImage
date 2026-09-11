@@ -271,7 +271,9 @@ function buildPrompt(){
   var meta=SUBJECTS.filter(function(s){return s.id===state.subject;})[0]||SUBJECTS[0];
   var removing=codes.indexOf("/removepeople")!==-1||codes.indexOf("/removepeoplebg")!==-1;
   var selective=removing && state.removeMode==="marked" && state.markers.length>0;
-  if(selective) codes=codes.map(function(c){ return (c==="/removepeople"||c==="/removepeoplebg")?"/eraseperson":c); });
+  if(selective) codes=codes.map(function(c){
+    return (c==="/removepeople" || c==="/removepeoplebg")) ? "/eraseperson" : c;
+  });
 
   var lines=[];
   if(selective){

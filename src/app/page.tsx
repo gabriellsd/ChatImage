@@ -14,6 +14,7 @@ import {
   type SubjectId,
   buildEditPrompt,
 } from "@/lib/effects";
+import { downloadBlob, stripImageMetadata } from "@/lib/stripMetadata";
 
 function fileToBase64(file: File): Promise<{ base64: string; mimeType: string }> {
   return new Promise((resolve, reject) => {
@@ -482,6 +483,26 @@ export default function HomePage() {
     showToast(ok ? "Prompt copiado." : "Não foi possível copiar.");
   }
 
+  /** Regrava pixels e baixa sem EXIF/XMP/C2PA (útil pós-ChatGPT → Instagram). */
+  async function downloadWithoutMetadata() {
+    if (!file) {
+      showToast("Envie uma foto primeiro.");
+      return;
+    }
+    setBusy(true);
+    try {
+      const { blob, fileName } = await stripImageMetadata(file);
+      downloadBlob(blob, fileName);
+      showToast("Baixada sem metadados — pronta pro Instagram.");
+    } catch (err) {
+      showToast(
+        err instanceof Error ? err.message : "Erro ao limpar metadados.",
+      );
+    } finally {
+      setBusy(false);
+    }
+  }
+
   useEffect(() => {
     const el = catsRef.current;
     if (!el) return;
@@ -790,6 +811,16 @@ export default function HomePage() {
                   className="font-semibold text-[var(--ink-dim)] hover:text-[var(--ink)]"
                 >
                   Remover
+                </button>
+                <span className="text-[var(--line)]">·</span>
+                <button
+                  type="button"
+                  disabled={busy}
+                  onClick={() => void downloadWithoutMetadata()}
+                  title="Remove EXIF, XMP e rótulo de IA (C2PA) para postar no Instagram"
+                  className="font-semibold text-[var(--accent)] hover:opacity-90 disabled:opacity-40"
+                >
+                  Baixar sem metadados
                 </button>
                 {!extensionReady ? (
                   <>

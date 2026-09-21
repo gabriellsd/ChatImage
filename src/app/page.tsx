@@ -14,11 +14,6 @@ import {
   type SubjectId,
   buildEditPrompt,
 } from "@/lib/effects";
-import { downloadBlob, stripImageMetadata } from "@/lib/stripMetadata";
-import {
-  readImageMetadata,
-  type ImageMetaReport,
-} from "@/lib/readMetadata";
 
 function fileToBase64(file: File): Promise<{ base64: string; mimeType: string }> {
   return new Promise((resolve, reject) => {
@@ -86,9 +81,6 @@ export default function HomePage() {
   const [removePeopleMode, setRemovePeopleMode] =
     useState<RemovePeopleMode>("auto");
   const [peopleMarkers, setPeopleMarkers] = useState<PeopleMarker[]>([]);
-  const [metaReport, setMetaReport] = useState<ImageMetaReport | null>(null);
-  const [metaLoading, setMetaLoading] = useState(false);
-  const [metaExpanded, setMetaExpanded] = useState(false);
   const removingPeople =
     selected.includes("/removepeople") || selected.includes("/removepeoplebg");
   const markingPeople = removingPeople && removePeopleMode === "marked";
@@ -181,32 +173,6 @@ export default function HomePage() {
     const url = URL.createObjectURL(file);
     setPreview(url);
     return () => URL.revokeObjectURL(url);
-  }, [file]);
-
-  useEffect(() => {
-    if (!file) {
-      setMetaReport(null);
-      setMetaLoading(false);
-      setMetaExpanded(false);
-      return;
-    }
-    let cancelled = false;
-    setMetaLoading(true);
-    setMetaExpanded(false);
-    setMetaReport(null);
-    void readImageMetadata(file)
-      .then((report) => {
-        if (!cancelled) setMetaReport(report);
-      })
-      .catch(() => {
-        if (!cancelled) setMetaReport(null);
-      })
-      .finally(() => {
-        if (!cancelled) setMetaLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
   }, [file]);
 
   const prompt = useMemo(
@@ -516,26 +482,6 @@ export default function HomePage() {
     showToast(ok ? "Prompt copiado." : "Não foi possível copiar.");
   }
 
-  /** Regrava pixels e baixa sem EXIF/XMP/C2PA (útil pós-ChatGPT → Instagram). */
-  async function downloadWithoutMetadata() {
-    if (!file) {
-      showToast("Envie uma foto primeiro.");
-      return;
-    }
-    setBusy(true);
-    try {
-      const { blob, fileName } = await stripImageMetadata(file);
-      downloadBlob(blob, fileName);
-      showToast("Baixada sem metadados — pronta pro Instagram.");
-    } catch (err) {
-      showToast(
-        err instanceof Error ? err.message : "Erro ao limpar metadados.",
-      );
-    } finally {
-      setBusy(false);
-    }
-  }
-
   useEffect(() => {
     const el = catsRef.current;
     if (!el) return;
@@ -803,116 +749,6 @@ export default function HomePage() {
             </div>
           ) : null}
 
-          {file ? (
-            <div className="meta-panel shrink-0">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <h3 className="text-[13px] font-bold tracking-wide text-[var(--ink)]">
-                  Metadados
-                </h3>
-                {metaReport?.hasAiSignals ? (
-                  <span className="meta-badge meta-badge-warn">
-                    Possível rótulo de IA
-                  </span>
-                ) : metaReport && !metaLoading ? (
-                  <span className="meta-badge">Sem sinal óbvio de IA</span>
-                ) : null}
-              </div>
-
-              {metaLoading ? (
-                <p className="mt-2 text-[13px] text-[var(--ink-dim)]">
-                  Lendo metadados…
-                </p>
-              ) : metaReport ? (
-                <>
-                  <dl className="meta-grid mt-2">
-                    <div>
-                      <dt>Arquivo</dt>
-                      <dd title={metaReport.fileName}>{metaReport.fileName}</dd>
-                    </div>
-                    <div>
-                      <dt>Tipo</dt>
-                      <dd>{metaReport.mimeType}</dd>
-                    </div>
-                    <div>
-                      <dt>Tamanho</dt>
-                      <dd>{metaReport.fileSize}</dd>
-                    </div>
-                    <div>
-                      <dt>Dimensões</dt>
-                      <dd>
-                        {metaReport.width && metaReport.height
-                          ? `${metaReport.width} × ${metaReport.height}`
-                          : "—"}
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>EXIF</dt>
-                      <dd>{metaReport.hasExif ? "Sim" : "Não"}</dd>
-                    </div>
-                    <div>
-                      <dt>XMP / IPTC</dt>
-                      <dd>
-                        {metaReport.hasXmp || metaReport.hasIptc
-                          ? [
-                              metaReport.hasXmp ? "XMP" : null,
-                              metaReport.hasIptc ? "IPTC" : null,
-                            ]
-                              .filter(Boolean)
-                              .join(" · ")
-                          : "Não"}
-                      </dd>
-                    </div>
-                  </dl>
-
-                  {metaReport.aiHints.length > 0 ? (
-                    <ul className="meta-hints mt-2">
-                      {metaReport.aiHints.map((hint) => (
-                        <li key={hint}>{hint}</li>
-                      ))}
-                    </ul>
-                  ) : null}
-
-                  {metaReport.fields.length > 0 ? (
-                    <>
-                      <button
-                        type="button"
-                        className="mt-2 text-[13px] font-semibold text-[var(--accent)] hover:opacity-90"
-                        onClick={() => setMetaExpanded((v) => !v)}
-                      >
-                        {metaExpanded
-                          ? "Ocultar campos"
-                          : `Ver ${metaReport.fields.length} campos`}
-                      </button>
-                      {metaExpanded ? (
-                        <div className="meta-fields mt-2">
-                          {metaReport.fields.map((f) => (
-                            <div
-                              key={`${f.key}-${f.value.slice(0, 24)}`}
-                              className={f.highlight ? "is-warn" : undefined}
-                            >
-                              <span className="meta-key">{f.key}</span>
-                              <span className="meta-val" title={f.value}>
-                                {f.value}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      ) : null}
-                    </>
-                  ) : (
-                    <p className="mt-2 text-[13px] text-[var(--ink-dim)]">
-                      Nenhum campo EXIF/XMP/IPTC legível neste arquivo.
-                    </p>
-                  )}
-                </>
-              ) : (
-                <p className="mt-2 text-[13px] text-[var(--ink-dim)]">
-                  Não foi possível ler os metadados.
-                </p>
-              )}
-            </div>
-          ) : null}
-
           <div className="flex shrink-0 flex-col gap-2">
             <div className="flex items-center gap-3">
               <button
@@ -954,16 +790,6 @@ export default function HomePage() {
                   className="font-semibold text-[var(--ink-dim)] hover:text-[var(--ink)]"
                 >
                   Remover
-                </button>
-                <span className="text-[var(--line)]">·</span>
-                <button
-                  type="button"
-                  disabled={busy}
-                  onClick={() => void downloadWithoutMetadata()}
-                  title="Remove EXIF, XMP e rótulo de IA (C2PA) para postar no Instagram"
-                  className="font-semibold text-[var(--accent)] hover:opacity-90 disabled:opacity-40"
-                >
-                  Baixar sem metadados
                 </button>
                 {!extensionReady ? (
                   <>

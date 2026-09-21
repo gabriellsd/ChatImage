@@ -240,6 +240,99 @@ body::before {
   padding: 10px 12px;
 }
 
+.meta-panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 10px 12px;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.meta-badge-warn {
+  background: var(--danger-soft);
+  color: var(--warn);
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin: 0;
+}
+
+.meta-grid dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.meta-grid dd {
+  margin: 2px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.meta-hints {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--warn);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.meta-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+
+.meta-fields > div {
+  display: grid;
+  grid-template-columns: minmax(90px, 38%) 1fr;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.meta-fields > div.is-warn .meta-key,
+.meta-fields > div.is-warn .meta-val {
+  color: var(--warn);
+}
+
+.meta-key {
+  color: var(--ink-dim);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.meta-val {
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .drop-zone.is-marking {
   outline: 1px dashed color-mix(in srgb, var(--accent) 55%, transparent);
   outline-offset: -6px;

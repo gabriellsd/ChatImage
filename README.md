@@ -28,6 +28,8 @@ No iPhone/Safari use **Enviar pro ChatGPT** (compartilhar) ou cole o prompt.
 
 ## Baixar sem metadados (Instagram)
 
+Ao enviar uma foto, o app mostra os metadados (EXIF/XMP/IPTC e sinais de IA/C2PA).
+
 Depois de editar no ChatGPT, baixe o resultado, cole/solte de novo no ChatImage e use **Baixar sem metadados**.
 
 Isso regrava só os pixels (canvas) e remove EXIF, XMP, IPTC e Content Credentials (C2PA) — o que o Instagram usa para o rótulo automático de IA. Em alguns casos a Meta ainda pode detectar por outros sinais.
